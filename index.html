@@ -10,21 +10,38 @@
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
+            color: #333;
         }
         header {
-            background-color: #6a1b9a;
+            background: linear-gradient(to right, #6a1b9a, #8e24aa);
             color: white;
-            padding: 40px 20px;
+            padding: 50px;
             text-align: center;
+            position: relative;
         }
         header h1 {
-            margin: 0;
             font-size: 3em;
+            margin: 0;
         }
         header h2 {
             font-size: 1.5em;
-            margin-top: 10px;
             font-weight: 300;
+            margin-top: 10px;
+        }
+        nav {
+            background-color: #8e24aa;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         .container {
             max-width: 1200px;
@@ -38,24 +55,24 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
-        .profile, .experience, .skills, .education {
-            margin-bottom: 40px;
-        }
-        .profile p {
-            font-size: 1.2em;
-            line-height: 1.6;
+        .profile, .experience, .skills, .education, .fun-facts, .contact {
+            margin-bottom: 60px;
         }
         .experience-item {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         .experience-item h3 {
             color: #6a1b9a;
+            margin-bottom: 5px;
         }
-        .skills ul, .education ul {
+        .experience-item p {
+            margin: 0;
+        }
+        .skills ul, .education ul, .fun-facts ul {
             list-style-type: none;
             padding: 0;
         }
-        .skills li, .education li {
+        .skills li, .education li, .fun-facts li {
             background-color: #eee;
             padding: 10px;
             margin-bottom: 10px;
@@ -66,6 +83,7 @@
             color: white;
             text-align: center;
             padding: 20px;
+            position: relative;
         }
         footer a {
             color: #fff;
@@ -74,6 +92,47 @@
         footer a:hover {
             text-decoration: underline;
         }
+        .btn-contact {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn-contact:hover {
+            background-color: #8e24aa;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            padding: 10px;
+            border: none;
+            background-color: #6a1b9a;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #8e24aa;
+        }
+        /* Fun animations */
+        .fun-facts li {
+            transition: transform 0.2s;
+        }
+        .fun-facts li:hover {
+            transform: scale(1.05);
+            background-color: #d1c4e9;
+        }
     </style>
 </head>
 <body>
@@ -81,50 +140,86 @@
 <header>
     <h1>Priyanshi Jogani</h1>
     <h2>Digital Marketer & Social Media Executive</h2>
+    <nav>
+        <a href="#profile">Profile</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#fun-facts">Fun Facts</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
 <div class="container">
-    <section class="profile">
+    <section id="profile" class="profile">
         <h2 class="section-title">Career Objective</h2>
-        <p>Seeking a position where I can effectively contribute my skills as a Digital Marketer and Social Media Executive, to help the organization achieve its marketing goals & simultaneously accomplish career growth.</p>
+        <p>As a digital marketer with expertise in social media strategy, I aim to deliver impactful marketing campaigns and help businesses grow their online presence.</p>
     </section>
 
-    <section class="experience">
+    <section id="experience" class="experience">
         <h2 class="section-title">Work Experience</h2>
         <div class="experience-item">
             <h3>Kyros Solution Pvt Ltd - Social Media Executive</h3>
             <p>Aug 2021 - Feb 2023</p>
-            <p>Researched and analyzed social media trends, including ad revenue and web visitor data, to improve campaign efficacy.</p>
+            <p>Researched social media trends, improving campaign strategies and user engagement.</p>
         </div>
         <div class="experience-item">
-            <h3>Promise Jewels - General Manager (Internship)</h3>
-            <p>6-week internship</p>
+            <h3>Promise Jewels - General Manager (Intern)</h3>
+            <p>Managed a 6-week project on branding and online jewelry sales strategy.</p>
+        </div>
+        <!-- Add more dummy experiences -->
+        <div class="experience-item">
+            <h3>Creative Ads Agency - Digital Marketing Intern</h3>
+            <p>Jan 2020 - Jul 2020</p>
+            <p>Managed social media ad campaigns and helped boost client engagement by 30%.</p>
         </div>
     </section>
 
-    <section class="skills">
+    <section id="skills" class="skills">
         <h2 class="section-title">Key Skills</h2>
         <ul>
             <li>Social Media Marketing</li>
-            <li>Strategic Planning</li>
-            <li>Reels Content Creation</li>
-            <li>Product Video Shoot & Editing</li>
-            <li>Meta Business Suite, Canva</li>
+            <li>Content Strategy & Planning</li>
+            <li>Reels Content Creation & Editing</li>
+            <li>Graphic Design with Canva</li>
+            <li>Facebook & Instagram Ads Management</li>
+            <li>Data Analytics with Google Analytics</li>
         </ul>
     </section>
 
-    <section class="education">
+    <section id="education" class="education">
         <h2 class="section-title">Education</h2>
         <ul>
-            <li>BBA (Hons), B.R.C.M College of Business Administration, 7.60 avg - April 2024</li>
+            <li>BBA (Hons), B.R.C.M College of Business Administration - 7.60 avg (April 2024)</li>
             <li>HSC - 66.00% (March 2021)</li>
             <li>SSC - 60.00%</li>
         </ul>
     </section>
+
+    <section id="fun-facts" class="fun-facts">
+        <h2 class="section-title">Fun Facts About Me</h2>
+        <ul>
+            <li>I love creating Instagram reels and have a passion for storytelling through visuals.</li>
+            <li>When I’m not working, you’ll find me exploring new cafes or exploring new places.</li>
+            <li>I once managed a viral marketing campaign.</li>
+            <li>I’m a national player in rugby and roll ball.”</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p>If you'd like to work with me or just say hello, feel free to send me a message:</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 </div>
 
 <footer>
-    <p>Connect with me: <a href="https://www.linkedin.com/in/priyanshi-jogani-69521822a" target="_blank">LinkedIn</a></p>
+    <p>Connect with me: <a href="https://www.linkedin.com/in/priyanshi-jogani-69521822a/" target="_blank">LinkedIn</a></p>
     <p>© 2024 Priyanshi Jogani | All Rights Reserved</p>
 </footer>
 
